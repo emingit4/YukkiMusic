@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2024 by TheTeamVivek@Github, < https://github.com/TheTeamVivek >.
-#
-# This file is part of < https://github.com/TheTeamVivek/YukkiMusic > project,
-# and is released under the MIT License.
-# Please see < https://github.com/TheTeamVivek/YukkiMusic/blob/master/LICENSE >
-#
-# All rights reserved
-
 import re
 import os
 import sys
@@ -19,8 +10,6 @@ from pyrogram import Client
 from pyrogram.enums import ChatType
 
 from YukkiMusic.misc import SUDOERS
-
-
 from YukkiMusic.utils.database import get_lang, is_maintenance
 
 languages = {}
@@ -28,25 +17,20 @@ commands = {}
 helpers = {}
 languages_present = {}
 
-
 def load_yaml_file(file_path: str) -> dict:
     with open(file_path, "r", encoding="utf8") as file:
         return yaml.safe_load(file)
-
 
 def get_command(lang: str = "en") -> Union[str, List[str]]:
     if lang not in commands:
         lang = "en"
     return commands[lang]
 
-
 def get_string(lang: str):
     return languages[lang]
 
-
 def get_helpers(lang: str):
     return helpers[lang]
-
 
 # Load English commands first and set English keys
 commands["en"] = load_yaml_file(r"./strings/cmds/en.yml")
@@ -73,12 +57,17 @@ for filename in os.listdir(r"./strings/helpers/"):
             os.path.join(r"./strings/helpers/", filename)
         )
 
+# Türk dilini yükləmək
+if "tr" not in languages:
+    languages["tr"] = load_yaml_file(r"./strings/langs/tr.yml")
+    languages_present["tr"] = languages["tr"]["name"]
+
 if "en" not in languages:
     languages["en"] = load_yaml_file(r"./strings/langs/en.yml")
     languages_present["en"] = languages["en"]["name"]
 
 for filename in os.listdir(r"./strings/langs/"):
-    if filename.endswith(".yml") and filename != "en.yml":
+    if filename.endswith(".yml") and filename != "en.yml" and filename != "tr.yml":
         language_name = filename[:-4]
         languages[language_name] = load_yaml_file(
             os.path.join(r"./strings/langs/", filename)
@@ -102,7 +91,6 @@ if not commands:
     )
     sys.exit()
 
-
 def command(
     commands: Union[str, List[str]],
     prefixes: Union[str, List[str], None] = "/",
@@ -110,6 +98,11 @@ def command(
 ):
     async def func(flt, client: Client, message: Message):
         lang_code = await get_lang(message.chat.id)
+        
+        # Default olaraq Türk dilini seçirik
+        if lang_code not in languages:
+            lang_code = "tr"
+        
         try:
             _ = get_string(lang_code)
         except Exception:
@@ -132,6 +125,8 @@ def command(
         # Get localized and English commands
         localized_commands = []
         en_commands = []
+        tr_commands = []  # Türk dili üçün əlavə olunub
+
         for cmd in commands_list:
             localized_cmd = get_command(lang_code)[cmd]
             if isinstance(localized_cmd, str):
@@ -144,6 +139,13 @@ def command(
                 en_commands.append(en_cmd)
             elif isinstance(en_cmd, list):
                 en_commands.extend(en_cmd)
+
+            # Türk dili komandasını yükləmək
+            tr_cmd = get_command("tr")[cmd]
+            if isinstance(tr_cmd, str):
+                tr_commands.append(tr_cmd)
+            elif isinstance(tr_cmd, list):
+                tr_commands.extend(tr_cmd)
 
         username = client.me.username or ""
         text = message.text or message.caption
@@ -175,20 +177,11 @@ def command(
 
         all_commands = []
 
-        # Add English commands with prefix only
-        if lang_code == "en":
-            all_commands.extend((cmd, True) for cmd in en_commands)  # Only with prefix
-        else:
-            # For non-English languages, add commands both with and without prefix
-            all_commands.extend(
-                (cmd, True) for cmd in en_commands
-            )  # English commands with prefix
-            all_commands.extend(
-                (cmd, True) for cmd in localized_commands
-            )  # Non-English commands with prefix
-            all_commands.extend(
-                (cmd, False) for cmd in localized_commands
-            )  # Non-English commands without prefix
+        # Add English, Turkish commands with prefix only
+        all_commands.extend((cmd, True) for cmd in en_commands)  # Only with prefix
+        all_commands.extend((cmd, True) for cmd in tr_commands)  # Türk dili komandasını əlavə etmək
+        all_commands.extend((cmd, True) for cmd in localized_commands)
+
 
         for cmd, with_prefix in all_commands:
             matched_cmd = match_command(cmd, text, with_prefix)
