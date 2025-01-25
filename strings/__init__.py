@@ -73,9 +73,9 @@ for filename in os.listdir(r"./strings/langs/"):
             os.path.join(r"./strings/langs/", filename)
         )
 
-        for item in languages["en"]:
+        for item in languages["tr"]:
             if item not in languages[language_name]:
-                languages[language_name][item] = languages["en"][item]
+                languages[language_name][item] = languages["tr"][item]
 
         try:
             languages_present[language_name] = languages[language_name]["name"]
