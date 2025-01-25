@@ -21,9 +21,9 @@ def load_yaml_file(file_path: str) -> dict:
     with open(file_path, "r", encoding="utf8") as file:
         return yaml.safe_load(file)
 
-def get_command(lang: str = "en") -> Union[str, List[str]]:
+def get_command(lang: str = "tr") -> Union[str, List[str]]:
     if lang not in commands:
-        lang = "en"
+        lang = "tr"
     return commands[lang]
 
 def get_string(lang: str):
@@ -33,11 +33,11 @@ def get_helpers(lang: str):
     return helpers[lang]
 
 # Load English commands first and set English keys
-commands["en"] = load_yaml_file(r"./strings/cmds/en.yml")
-english_keys = set(commands["en"].keys())
+commands["tr"] = load_yaml_file(r"./strings/cmds/tr.yml")
+english_keys = set(commands["tr"].keys())
 
 for filename in os.listdir(r"./strings/cmds/"):
-    if filename.endswith(".yml") and filename != "en.yml":
+    if filename.endswith(".yml") and filename != "tr.yml":
         language_code = filename[:-4]
         commands[language_code] = load_yaml_file(
             os.path.join(r"./strings/cmds/", filename)
@@ -62,12 +62,12 @@ if "tr" not in languages:
     languages["tr"] = load_yaml_file(r"./strings/langs/tr.yml")
     languages_present["tr"] = languages["tr"]["name"]
 
-if "en" not in languages:
-    languages["en"] = load_yaml_file(r"./strings/langs/en.yml")
-    languages_present["en"] = languages["en"]["name"]
+if "tr" not in languages:
+    languages["tr"] = load_yaml_file(r"./strings/langs/en.yml")
+    languages_present["tr"] = languages["tr"]["name"]
 
 for filename in os.listdir(r"./strings/langs/"):
-    if filename.endswith(".yml") and filename != "en.yml" and filename != "tr.yml":
+    if filename.endswith(".yml") and filename != "tr.yml" and filename != "tr.yml":
         language_name = filename[:-4]
         languages[language_name] = load_yaml_file(
             os.path.join(r"./strings/langs/", filename)
@@ -106,7 +106,7 @@ def command(
         try:
             _ = get_string(lang_code)
         except Exception:
-            _ = get_string("en")
+            _ = get_string("tr")
 
         if not await is_maintenance():
             if (
