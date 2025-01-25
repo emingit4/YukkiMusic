@@ -124,7 +124,6 @@ def command(
 
         # Get localized and English commands
         localized_commands = []
-        en_commands = []
         tr_commands = []  # Türk dili üçün əlavə olunub
 
         for cmd in commands_list:
@@ -134,11 +133,6 @@ def command(
             elif isinstance(localized_cmd, list):
                 localized_commands.extend(localized_cmd)
 
-            en_cmd = get_command("en")[cmd]
-            if isinstance(en_cmd, str):
-                en_commands.append(en_cmd)
-            elif isinstance(en_cmd, list):
-                en_commands.extend(en_cmd)
 
             # Türk dili komandasını yükləmək
             tr_cmd = get_command("tr")[cmd]
@@ -178,7 +172,6 @@ def command(
         all_commands = []
 
         # Add English, Turkish commands with prefix only
-        all_commands.extend((cmd, True) for cmd in en_commands)  # Only with prefix
         all_commands.extend((cmd, True) for cmd in tr_commands)  # Türk dili komandasını əlavə etmək
         all_commands.extend((cmd, True) for cmd in localized_commands)
 
