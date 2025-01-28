@@ -23,8 +23,6 @@ Admin: |
 
   <b>✧ {4}</b> [Nömrə (Məsələn: 3)] - Musiqini müəyyən nömrəyə keç. Məsələn: <b>/skip 3</b> 3-cü sıradakı musiqiyə keçəcək və 1 və 2-ci sıradakıları keçəcək.
 
-  <b>✧ {10}</b> [Aktivləşdir/Deaktivləşdir] və ya [1-10 arası nömrə] - Aktiv olduqda bot səsli söhbətdə hazırkı musiqini 1-10 dəfə təkrarlayacaq. Default təkrar dəyəri 10-dur.
-  
   Active: |
   <b>✧ {0}</b> - Botda aktiv olan səsli söhbətləri yoxla.
 
