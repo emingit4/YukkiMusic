@@ -1,0 +1,125 @@
+Auth: |
+  <b>Auth istifadəçilər qrupunuzda admin hüquqları olmadan Admin komandalarını istifadə edə bilərlər.</b>
+
+  <b>✧ {0}</b> [İstifadəçi adı] - İstifadəçini qrupun AUTH SİYAHIsına əlavə et.
+
+  <b>✧ {1}</b> [İstifadəçi adı] - İstifadəçini qrupun AUTH SİYAHIsından sil.
+
+  <b>✧ {2}</b> - Qrupun AUTH SİYAHIsını yoxla.
+
+Admin: |
+  <b>c kanal musiqisi üçün nəzərdə tutulub</b>
+
+  <b>✧ {0}</b> - Çalan musiqini dayandır.
+  <b>✧ {1}</b> - Dayandırılmış musiqini davam etdir.
+  <b>✧ {2}</b> - Çalan musiqini səssiz et.
+  <b>✧ {3}</b> - Səssiz edilmiş musiqini səsləndir.
+  <b>✧ {4}</b> - Hazırda çalan musiqini keç.
+  <b>✧ {5}</b> - Çalan musiqini dayandır.
+  <b>✧ {6}</b> - Sıradakı pleylisti/musiqiləri təsadüfi şəkildə dəyiş.
+  <b>✧ {7}</b> - Musiqini irəli yönləndir.
+  <b>✧ {8}</b> - Musiqini geri yönləndir.
+  <b>✧ {9}</b> - Botu qrupunuz üçün yenidən işə sal.
+
+  <b>✧ {4}</b> [Nömrə (Məsələn: 3)] - Musiqini müəyyən nömrəyə keç. Məsələn: <b>/skip 3</b> 3-cü sıradakı musiqiyə keçəcək və 1 və 2-ci sıradakıları keçəcək.
+
+  <b>✧ {10}</b> [Aktivləşdir/Deaktivləşdir] və ya [1-10 arası nömrə] - Aktiv olduqda bot səsli söhbətdə hazırkı musiqini 1-10 dəfə təkrarlayacaq. Default təkrar dəyəri 10-dur.
+  
+  Active: |
+  <b>✧ {0}</b> - Botda aktiv olan səsli söhbətləri yoxla.
+
+  <b>✧ {1}</b> - Botda aktiv olan səsli və video zəngləri yoxla.
+
+  <b>✧ {2}</b> - Botda aktiv olan video zəngləri yoxla.
+
+  <b>✧ {3}</b> - Botun statistikasını yoxla.
+
+Play: |
+  <b>✧ {0}</b> - Bot, göstərilən sorğunu səsli söhbətdə oxumağa başlayacaq və ya canlı bağlantıları səsli söhbətlərdə yayımlayacaq.
+
+  <b>✧ {1}</b> - Force Play, hazırda çalan musiqini dayandırır və axtarılan musiqini sıranı pozmadan dərhal oxumağa başlayır.
+
+  <b>✧ {2}</b> - Kanalı qrupa qoş və qrupunuzdan kanalın səsli söhbətində musiqi yayımla.
+
+  <b>✧ {3}</b> - /play ilə oynanılması mümkün olmayan birbaşa və ya m3u8 URL-ni yayımla.
+
+G-cast: |
+  <b>{0} [Mesaj və ya hər hansı mesaja cavab]</b> » Botun xidmət göstərdiyi söhbətlərə mesaj yayımla.
+  <u>Yayım Rejimləri:</u>
+
+  <b><code>-pin</code></b> » Yayımlanan mesajı xidmət olunan söhbətlərdə sancır.
+
+  <b><code>-pinloud</code></b> » Yayımlanan mesajı xidmət olunan söhbətlərdə sancır və üzvlərə bildiriş göndərir.
+
+  <b><code>-user</code></b> » Mesajı botunuzu işə salmış istifadəçilərə yayımlayır [Mesajı sancmaq üçün `-pin` və ya `-pinloud` əlavə edə bilərsiniz].
+
+  <b><code>-assistant</code></b> » Mesajınızı botun bütün köməkçiləri vasitəsilə yayımlayır.
+
+  <b><code>-nobot</code></b> » Mesajın **bot** tərəfindən yayımlanmadığını təmin edir [Mesajın qruplarda yayımlanmasını istəmədiyiniz hallarda faydalıdır].
+
+  > <b>Nümunə:</b> <code>/{0} -user -assistant -pin Test yayımı</code>
+  
+  Bot: |
+  <b>★ {0}</b> - Botda Qlobal Statistika üzrə Top 10 Musiqilər, Botun Top 10 İstifadəçiləri, Top 10 Qruplar, Qrupda ən çox səsləndirilən Top 10 musiqilər və s. əldə et.
+
+  <b>★ {1}</b> - Botun Sudo istifadəçilərini yoxla.
+
+  <b>★ {2} [Musiqi Adı]</b> - Müəyyən musiqi üçün internetdə söz axtarışı et.
+
+  <b>★ {3} [Musiqi Adı] və ya [YouTube Link]</b> - YouTube-dan MP3 və ya MP4 formatında musiqi yüklə.
+
+  <b>★ {4}</b> - Musiqi növbə siyahısını yoxla.
+
+  <u><b>⚡️Şəxsi Bot:</b></u>
+
+  <b>✧ {5} [CHAT_ID]</b> - Qrupu botdan istifadə üçün icazə siyahısına əlavə et.
+
+  <b>✧ {6} [CHAT_ID]</b> - Qrupu botdan istifadə üçün icazədən sil.
+
+  <b>✧ {7}</b> - Botun icazə verdiyi bütün qrupları yoxla.
+
+P-List: |
+  <b>{0}</b> - Bot serverində saxlanılan tam pleylistinizi yoxlayın.
+
+  <b>{1}</b> - Saxlanılan pleylistdən hər hansı bir mahnını silin.
+
+  <b>{2}</b> - Saxlanılan pleylistinizi **audio** rejimdə səsləndirməyə başlayın.
+
+  <b>{3}</b> - Pleylistinizi **video** rejimdə səsləndirməyə başlayın.
+
+B-list: |
+  <b>✧ {0}</b> [CHAT_ID] - Hər hansı bir qrupu Music Botdan istifadə etmək üçün qara siyahıya əlavə edin.
+  <b>✧ {1}</b> [CHAT_ID] - Qara siyahıdakı qrupu Music Botdan istifadə etmək üçün icazə verin.
+  <b>✧ {2}</b> - Bloklanmış qrupların siyahısını yoxlayın.
+
+  <b>✧ {3}</b> [İstifadəçi adı və ya istifadəçiyə cavab verin] - İstifadəçiyə bot komandalarından istifadə etməyə icazə verməyin.
+  <b>✧ {4}</b> [İstifadəçi adı və ya istifadəçiyə cavab verin] - İstifadəçini botun bloklu siyahısından çıxarın.
+  <b>✧ {5}</b> - Bloklanmış istifadəçilərin siyahısını yoxlayın.
+
+  <b>✧ {6}</b> [İstifadəçi adı və ya istifadəçiyə cavab verin] - İstifadəçini bütün qruplardan bloklayın və botdan istifadə etməyə icazə verməyin (GBan).
+  <b>✧ {7}</b> [İstifadəçi adı və ya istifadəçiyə cavab verin] - İstifadəçini GBan siyahısından çıxarın və botdan istifadə etməyə icazə verin.
+  <b>✧ {8}</b> - GBan edilmiş istifadəçilərin siyahısını yoxlayın.
+
+Dev: |
+  <b><u>Sudo istifadəçilər əlavə et və sil:</u></b>
+
+  <b>{0} [İstifadəçi adı və ya istifadəçiyə cavab verin]</b> - Botunuza sudo əlavə edin.
+  <b>{1} [İstifadəçi adı, ID və ya istifadəçiyə cavab verin]</b> - Bot sudo istifadəçilərindən çıxarın.
+  <b>{2}</b> - Bütün sudo istifadəçilərin siyahısını əldə edin.
+
+  <b><u>Heroku:</u></b>
+
+  <b>{3}</b> - Dyno istifadəsini yoxlayın.
+  <b>{4} [Var Adı]</b> - Config dəyişənini əldə edin.
+  <b>{5} [Var Adı]</b> - Config dəyişənini silin.
+  <b>{6} [Var Adı] [Dəyər]</b> - Config dəyişənini əlavə edin və ya yeniləyin. Dəyişən və dəyərini boşluqla ayırın.
+
+  <b><u>Bot komandaları:</u></b>
+
+  <b>{7}</b> - Botu yenidən başladın (yalnız SUDOERS).
+  <b>{8}</b> - Botu yeniləyin.
+  <b>{9}</b> - Server sürətlərini yoxlayın.
+  <b>{10} [enable / disable]</b> - Botun texniki xidmət rejimini dəyişdirin.
+  <b>{11} [enable / disable]</b> - Axtarış sorğularının log qrupunda qeyd edilib-edilməməsini dəyişdirin.
+  <b>{12} [Sətir sayı]</b> - Serverdən log faylları əldə edin.
+  <b>{13} [enable / disable]</b> - 30 saniyə ərzində heç kim dinləməsə, yayıma avtomatik olaraq son qoyun.
