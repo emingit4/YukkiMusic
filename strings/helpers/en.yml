@@ -44,20 +44,20 @@ Play: |
   <b>✧ {3}</b> - /play ilə oynanılması mümkün olmayan birbaşa və ya m3u8 URL-ni yayımla.
 
 G-cast: |
-  <b>{0} [Mesaj və ya hər hansı mesaja cavab]</b> » Botun xidmət göstərdiyi söhbətlərə mesaj yayımla.
-  <u>Yayım Rejimləri:</u>
+  <b>{0} [Message or Reply to any message]</b> » Broadcast a message to served chats of bot
+  <u>Broadcasting Modes:</u>
 
-  <b><code>-pin</code></b> » Yayımlanan mesajı xidmət olunan söhbətlərdə sancır.
+  <b><code>-pin</code></b> » Pins your broadcasted message in served chats
 
-  <b><code>-pinloud</code></b> » Yayımlanan mesajı xidmət olunan söhbətlərdə sancır və üzvlərə bildiriş göndərir.
+  <b><code>-pinloud</code></b> » Pins your broadcasted message in served chats and sends notification to the members
 
-  <b><code>-user</code></b> » Mesajı botunuzu işə salmış istifadəçilərə yayımlayır [Mesajı sancmaq üçün `-pin` və ya `-pinloud` əlavə edə bilərsiniz].
+  <b><code>-user</code></b> » Broadcast the message to users who have started your bot [You can also pin the message by adding `-pin` or `-pinloud`]
 
-  <b><code>-assistant</code></b> » Mesajınızı botun bütün köməkçiləri vasitəsilə yayımlayır.
+  <b><code>-assistant</code></b> » Broadcast your message through all assistants of the bot
 
-  <b><code>-nobot</code></b> » Mesajın **bot** tərəfindən yayımlanmadığını təmin edir [Mesajın qruplarda yayımlanmasını istəmədiyiniz hallarda faydalıdır].
+  <b><code>-nobot</code></b> » Ensures that the **bot** doesn't broadcast the message [Useful when you don't want to broadcast the message to groups]
 
-  > <b>Nümunə:</b> <code>/{0} -user -assistant -pin Test yayımı</code>
+  > <b>Example:</b> <code>/{0} -user -assistant -pin Testing broadcast</code>
   
   Bot: |
   <b>★ {0}</b> - Botda Qlobal Statistika üzrə Top 10 Musiqilər, Botun Top 10 İstifadəçiləri, Top 10 Qruplar, Qrupda ən çox səsləndirilən Top 10 musiqilər və s. əldə et.
